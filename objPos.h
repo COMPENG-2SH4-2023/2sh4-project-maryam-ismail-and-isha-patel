@@ -10,10 +10,10 @@ class objPos
 
         objPos();
         objPos(objPos &o); // copy constructor
-        objPos(int xPos, int yPos, char sym);
+        objPos(int xPos, int yPos, char playerSymbol);
 
         void setObjPos(objPos o);        
-        void setObjPos(int xPos, int yPos, char sym);  
+        void setObjPos(int xPos, int yPos, char playerSymbol);  
         void getObjPos(objPos &returnPos);
         char getSymbol();
 

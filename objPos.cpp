@@ -1,12 +1,15 @@
 #include "objPos.h"
 
+// Default constructor for objPos class, initializes x, y, and symbol to 0
 objPos::objPos()
 {
     x = 0;
     y = 0;
-    symbol = 0; //NULL
+    symbol = 0; 
 }
 
+// Copy constructor
+//copies values from another objPos object
 objPos::objPos(objPos &o)
 {
     x = o.x;
@@ -15,11 +18,11 @@ objPos::objPos(objPos &o)
 }
 
 
-objPos::objPos(int xPos, int yPos, char sym)
+objPos::objPos(int xPos, int yPos, char playerSymbol)
 {
     x = xPos;
     y = yPos;
-    symbol = sym;
+    symbol = playerSymbol;
 }
 
 void objPos::setObjPos(objPos o)
@@ -29,11 +32,11 @@ void objPos::setObjPos(objPos o)
     symbol = o.symbol;
 }
 
-void objPos::setObjPos(int xPos, int yPos, char sym)
+void objPos::setObjPos(int xPos, int yPos, char playerSymbol)
 {
     x = xPos;
     y = yPos;
-    symbol = sym;
+    symbol = playerSymbol;
 }
 
 void objPos::getObjPos(objPos &returnPos)
@@ -46,6 +49,7 @@ char objPos::getSymbol()
     return symbol;
 }
 
+// Check if the position of the object is equal to a reference objPos object
 bool objPos::isPosEqual(const objPos* refPos)
 {
     return (refPos->x == x && refPos->y == y);
@@ -54,7 +58,7 @@ bool objPos::isPosEqual(const objPos* refPos)
 char objPos::getSymbolIfPosEqual(const objPos* refPos)
 {
     if(isPosEqual(refPos))
-        return getSymbol();
+        return getSymbol(); // Get the symbol of the object
     else
         return 0;
 }
